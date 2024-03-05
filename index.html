@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="background.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Console_NFTs</title>
+    <title>Console NFTs</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,25 +17,62 @@
             position: fixed;
             width: 100%;
             height: 100%;
-            z-index: 0;
+            z-index: 1;
             top: 0;
             left: 0;
         }
+        .sidebar-navigation {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 100%;
+            background-color: rgba(51, 51, 51, 0.8);
+            z-index: 3;
+            color: white;
+            padding: 20px 0;
+        }
+        .sidebar-navigation ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .sidebar-navigation ul li a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+            border-bottom: 1px solid #444;
+        }
+        .sidebar-navigation ul li a:hover,
+        .sidebar-navigation ul li a:focus {
+            background-color: #555;
+        }
         .container {
             width: 80%;
-            margin: auto;
+            margin: 0 auto;
+            margin-left: 200px;
             overflow: hidden;
             position: relative;
             z-index: 2;
         }
         .header {
-            background-color: #333;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 200% 200%;
+            animation: gradientBG 15s ease infinite;
             color: #ffffff;
             padding-top: 30px;
             padding-bottom: 30px;
             text-align: center;
             position: relative;
             z-index: 2;
+        }
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
         }
         .image-gallery {
             display: flex;
@@ -50,7 +87,6 @@
             box-shadow: 0 0 5px #aaaaaa;
             transition: transform 0.3s ease;
             position: relative;
-            text-align: center; /* Center the description and button */
             z-index: 2;
         }
         .image-box img {
@@ -61,75 +97,36 @@
         .image-box:hover {
             transform: scale(1.05);
         }
-        .image-description {
-            color: white; /* Adjust color as needed */
-            margin: 5px 0; /* Spacing around description */
-        }
-        .image-box button {
-            background-color: #444; /* Button background color */
-            color: white; /* Button text color */
-            border: none;
-            padding: 10px 20px;
-            margin-bottom: 10px; /* Space below the button */
-            cursor: pointer;
-        }
-        .image-box button:hover {
-            background-color: #555; /* Button hover color change */
-        }
-        @keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-.header {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 200% 200%;
-    animation: gradientBG 15s ease infinite;
-    color: #ffffff; /* Ensures text is legible over the gradient */
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-    position: relative;
-    z-index: 2; /* Adjust if necessary to ensure proper layering */
-}
-
     </style>
 </head>
 <body>
 
 <div id="particles-js"></div>
 
+<nav class="sidebar-navigation">
+    <ul>
+        <li><a href="#playstation">PlayStation</a></li>
+        <li><a href="#nintendo">Nintendo</a></li>
+        <li><a href="#atari">Atari</a></li>
+        <li><a href="#sega">Sega</a></li>
+    </ul>
+</nav>
+
 <div class="header">
-    <h1>Console NFT's</h1>
+    <h1>Console NFTs</h1>
 </div>
 
 <div class="container">
     <div class="image-gallery">
-        <!-- Existing Images -->
         <div class="image-box">
-            <img src="sega_genesis.png" alt="Sega Genesis">
-            <p class="image-description">Sega Genesis: A classic console.</p>
-            <button>Buy on OpenSea</button>
+            <img src="static/images/sega_genesis.png" alt="Sega Genesis">
         </div>
         <div class="image-box">
-            <img src="nes.png" alt="NES">
-            <p class="image-description">NES: The nostalgia machine.</p>
-            <button>Buy on OpenSea</button>
+            <img src="static/images/nes.png" alt="NES">
         </div>
         <div class="image-box">
-            <img src="n_64.png" alt="N64">
-            <p class="image-description">N64: The gaming pioneer.</p>
-            <button>Buy on OpenSea</button>
+            <img src="static/images/n_64.png" alt="N64">
         </div>
-        <!-- Repeat for additional rows, adjusting the descriptions and image paths as necessary -->
-        <!-- Add more images and descriptions here following the same structure -->
     </div>
 </div>
 
@@ -152,14 +149,6 @@ particlesJS("particles-js", {
       "stroke": {
         "width": 0,
         "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 5
-      },
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100
       }
     },
     "opacity": {
@@ -245,8 +234,6 @@ particlesJS("particles-js", {
   },
   "retina_detect": true
 });
-</script>
-
 </script>
 
 </body>
