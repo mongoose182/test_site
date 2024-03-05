@@ -1,0 +1,56 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #003973, #380b0b);
+    text-align: center;
+}
+
+h1 {
+    color: #FFFFFF;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.nft-item {
+    display: flex;
+    flex-direction: column; /* Stack image and item-info vertically */
+    align-items: flex-start; /* Align items to the left */
+    margin-bottom: 20px;
+}
+
+.nft-item img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px; /* Space between image and item-info */
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column; /* Stack button and placeholder text vertically */
+    align-items: flex-start; /* Align content to the left */
+}
+
+.buy-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Space between button and placeholder text */
+    white-space: nowrap;
+}
+
+.item-info p {
+    margin: 0; /* Remove default paragraph margins for tighter spacing */
+    color: #FFFFFF; /* Adjust color to fit the design, if necessary */
+}

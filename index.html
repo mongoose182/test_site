@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="background.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            top: 0;
+            left: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+        .header {
+            background-color: #333;
+            color: #ffffff;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px 0;
+            position: relative;
+            z-index: 2;
+        }
+        .image-box {
+            margin: 10px;
+            box-shadow: 0 0 5px #aaaaaa;
+            transition: transform 0.3s ease;
+            position: relative;
+            text-align: center; /* Center the description and button */
+            z-index: 2;
+        }
+        .image-box img {
+            width: 300px;
+            height: auto;
+            display: block;
+        }
+        .image-box:hover {
+            transform: scale(1.05);
+        }
+        .image-description {
+            color: white; /* Adjust color as needed */
+            margin: 5px 0; /* Spacing around description */
+        }
+        .image-box button {
+            background-color: #444; /* Button background color */
+            color: white; /* Button text color */
+            border: none;
+            padding: 10px 20px;
+            margin-bottom: 10px; /* Space below the button */
+            cursor: pointer;
+        }
+        .image-box button:hover {
+            background-color: #555; /* Button hover color change */
+        }
+        @keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.header {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 200% 200%;
+    animation: gradientBG 15s ease infinite;
+    color: #ffffff; /* Ensures text is legible over the gradient */
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Adjust if necessary to ensure proper layering */
+}
+
+    </style>
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<div class="header">
+    <h1>ConSouls</h1>
+</div>
+
+<div class="container">
+    <div class="image-gallery">
+        <!-- Existing Images -->
+        <div class="image-box">
+            <img src="static/images/sega_genesis.png" alt="Sega Genesis">
+            <p class="image-description">Sega Genesis: A classic console.</p>
+            <button>Buy on OpenSea</button>
+        </div>
+        <div class="image-box">
+            <img src="static/images/nes.png" alt="NES">
+            <p class="image-description">NES: The nostalgia machine.</p>
+            <button>Buy on OpenSea</button>
+        </div>
+        <div class="image-box">
+            <img src="static/images/n_64.png" alt="N64">
+            <p class="image-description">N64: 3D gaming pioneer.</p>
+            <button>Buy on OpenSea</button>
+        </div>
+        <!-- Repeat for additional rows, adjusting the descriptions and image paths as necessary -->
+        <!-- Add more images and descriptions here following the same structure -->
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 80,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 6,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+            "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
+</script>
+
+</script>
+
+</body>
+</html>
