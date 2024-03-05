@@ -21,16 +21,33 @@
             top: 0;
             left: 0;
         }
+        .header {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 200% 200%;
+            animation: gradientBG 15s ease infinite;
+            color: #ffffff;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
         .sidebar-navigation {
             position: fixed;
             left: 0;
-            top: 0;
+            top: 100px; /* Adjusted to start below the header */
             width: 200px;
-            height: 100%;
+            height: calc(100% - 100px); /* Adjusted height */
             background-color: rgba(51, 51, 51, 0.8);
             z-index: 3;
             color: white;
             padding: 20px 0;
+            overflow-y: auto;
         }
         .sidebar-navigation ul {
             list-style-type: none;
@@ -58,22 +75,6 @@
             position: relative;
             z-index: 2;
         }
-        .header {
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 200% 200%;
-            animation: gradientBG 15s ease infinite;
-            color: #ffffff;
-            padding-top: 30px;
-            padding-bottom: 30px;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-        @keyframes gradientBG {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
-        }
         .image-gallery {
             display: flex;
             flex-wrap: wrap;
@@ -88,6 +89,7 @@
             transition: transform 0.3s ease;
             position: relative;
             z-index: 2;
+            text-align: center;
         }
         .image-box img {
             width: 300px;
@@ -97,11 +99,37 @@
         .image-box:hover {
             transform: scale(1.05);
         }
+        .image-description {
+            margin-top: 10px;
+        }
+        .image-description p {
+            color: white; /* Set description text color to white */
+        }
+        .buy-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .buy-button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
 
 <div id="particles-js"></div>
+
+<div class="header">
+    <h1>ConSole NFTs</h1>
+</div>
 
 <nav class="sidebar-navigation">
     <ul>
@@ -112,20 +140,28 @@
     </ul>
 </nav>
 
-<div class="header">
-    <h1>Console NFTs</h1>
-</div>
-
 <div class="container">
     <div class="image-gallery">
         <div class="image-box">
             <img src="sega_genesis.png" alt="Sega Genesis">
+            <div class="image-description">
+                <p>Sega Genesis</p>
+                <button class="buy-button">Buy on OpenSea</button>
+            </div>
         </div>
         <div class="image-box">
             <img src="nes.png" alt="NES">
+            <div class="image-description">
+                <p>NES</p>
+                <button class="buy-button">Buy on OpenSea</button>
+            </div>
         </div>
         <div class="image-box">
             <img src="n_64.png" alt="N64">
+            <div class="image-description">
+                <p>N64</p>
+                <button class="buy-button">Buy on OpenSea</button>
+            </div>
         </div>
     </div>
 </div>
